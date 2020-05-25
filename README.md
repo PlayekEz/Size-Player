@@ -6,6 +6,13 @@ Este plugin fue hecho con el fin de cambiar tu tamaño de tu skin a como tu quie
 
 COMANDOS:
 
-- Usa /size set <porcentaje> <jugador>
-- Usa /size gui <jugador>
-- Usa /size <tiny | medium | big | normal | reset>
+- Usa /size set <nameSize>
+- Usa /size create <nameSize> <scale> <permission>
+  
+  Puedes crear diferentes tamaños con la escala que tu desees!
+  
+  Tamaños predeteminados:
+    - tiny
+    - big
+    - medium
+    - normal
