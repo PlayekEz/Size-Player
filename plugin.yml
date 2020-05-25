@@ -1,0 +1,5 @@
+name: "Size Player"
+main: Playek\Sp\Size
+version: 1.0
+api: 3.0.0
+author: "@SoyPlayek"

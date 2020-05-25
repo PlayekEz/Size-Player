@@ -1,0 +1,15 @@
+tiny:
+  scale: 0.1
+  permission: "default"
+
+medium:
+  scale: 0.5
+  permission: "default"
+
+big:
+  scale: 1.4
+  permission: "default"
+
+normal:
+  scale: 1.0
+  permission: "default"
