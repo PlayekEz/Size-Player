@@ -17,7 +17,6 @@ class Size extends PluginBase
     public function onLoad():void
     {
         self::$data = new Data($this);
-        self::$data->load();
     }
 
     public function onDisable():void {
@@ -31,6 +30,10 @@ class Size extends PluginBase
         @mkdir($this->getDataFolder());
 
         $this->saveResource("data.yml");
+
+        if(self::$data instanceof Data){
+            self::$data->load();
+        }
 
         $this->getServer()->getCommandMap()->register(self::CMD, new Command($this));
     }

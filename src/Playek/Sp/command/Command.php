@@ -50,7 +50,7 @@ class Command extends PluginCommmand
                 $name = $args[1];
                 $scale = (float)$args[2];
                 $permission = Size::DEFAULT_PERMISSION;
-                if (empty($args[3])) {
+                if (!empty($args[3])) {
                     $permission = $args[3];
                 }
                 if (Size::$data->create($name, $scale, $permission)) {
@@ -62,7 +62,7 @@ class Command extends PluginCommmand
                 break;
             case "set":
                 if (empty($args[1])) {
-                    $sender->sendMessage("§cUse: /size set <size>");
+                    $sender->sendMessage("§cUse: /size set <nameSize>");
                     return true;
                 }
                 if (Size::$data->exists($args[1])) {
@@ -73,7 +73,7 @@ class Command extends PluginCommmand
                     if ($sender->hasPermission($permission)) {
                         $ev = new PlayerChangeSize($sender, Size::$data->getScale($args[1]));
                         $ev->call();
-                        if(!$ev->isCancellable()) {
+                        if(!$ev->isCancelled()) {
                             $sender->setScale(Size::$data->getScale($args[1]));
                             $sender->sendMessage("§eYour size has been updated to " . Size::$data->getScale($args[1]));
                         }else{
